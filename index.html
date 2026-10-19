@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GV تسويق عقاري | اطلب استشارتك</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #10b981;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            color: #111827;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .header p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+            font-size: 14px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 15px;
+            background-color: #f9fafb;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #10b981;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .btn-submit {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-submit:hover {
+            background-color: #059669;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>لنبدأ بتسويق عقارك</h1>
+        <p>أدخل بياناتك وسيقوم فريق GV بالتواصل معك فوراً عبر واتساب</p>
+    </div>
+
+    <form id="whatsappForm">
+        <div class="form-group">
+            <label for="fullName">الاسم الكامل *</label>
+            <input type="text" id="fullName" placeholder="اكتب اسمك الثلاثي" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">رقم الهاتف *</label>
+            <input type="tel" id="phoneNumber" placeholder="رقم الهاتف الخاص بك" required>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose">الغرض من التعامل *</label>
+            <select id="purpose" required>
+                <option value="" disabled selected>اختر الغرض</option>
+                <option value="شراء">شراء عقار</option>
+                <option value="إيجار">إيجار عقار</option>
+                <option value="بيع">بيع عقار</option>
+                <option value="استثمار">استثمار عقاري</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="city">المدينة المفضلة *</label>
+            <select id="city" required>
+                <option value="" disabled selected>اختر المدينة</option>
+                <option value="التجمع الخامس — القاهرة الجديدة">التجمع الخامس — القاهرة الجديدة</option>
+                <option value="مدينة الشروق">مدينة الشروق</option>
+                <option value="مدينتي">مدينتي</option>
+                <option value="العاصمة الإدارية الجديدة">العاصمة الإدارية الجديدة</option>
+                <option value="الرحاب">الرحاب</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="budget">الميزانية التقريبية (بالجنيه المصري) *</label>
+            <input type="text" id="budget" placeholder="مثال: 3,000,000" required>
+        </div>
+
+        <div class="form-group">
+            <label for="details">تفاصيل العقار أو الطلب الإضافي</label>
+            <textarea id="details" placeholder="أي تفاصيل تود إضافتها هنا..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+            إرسال الطلب عبر واتساب 
+        </button>
+    </form>
+
+    <div class="footer">
+        © 2026 GV للتسويق العقاري. جميع الحقوق محفوظة.
+    </div>
+</div>
+
+<script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // الرقم المكتوب هو الرقم الخاص بك من الموقع الذي أرسلتيه
+        const myPhoneNumber = "201124462302"; 
+
+        const name = document.getElementById('fullName').value;
+        const phone = document.getElementById('phoneNumber').value;
+        const purpose = document.getElementById('purpose').value;
+        const city = document.getElementById('city').value;
+        const budget = document.getElementById('budget').value;
+        const details = document.getElementById('details').value || "لا يوجد تفاصيل إضافية";
+
+        const messageText = `*طلب تسويق عقاري جديد من الموقع:*%0A%0A` +
+                            `*👤 الاسم:* ${name}%0A` +
+                            `*📱 رقم الهاتف:* ${phone}%0A` +
+                            `*💼 الغرض:* ${purpose}%0A` +
+                            `*📍 المدينة:* ${city}%0A` +
+                            `*💰 الميزانية:* ${budget} ج.م%0A` +
+                            `*📝 تفاصيل إضافية:* ${details}`;
+
+        const whatsappUrl = `https://whatsapp.com{myPhoneNumber}&text=${messageText}`;
+
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
+
+</body>
+</html>
